@@ -1,0 +1,55 @@
+<div layout:decorate="~{customLayout}" layout:fragment="mainContent">
+  <p style="font-size:1.15em;margin:0;">Enter your MyGS username and password.</p>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <form method="post" id="fm1" th:object="${credential}">
+        <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+            <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"/>
+        </div>
+
+        <label for="username">Username</label>
+        <br>
+        <div class="input-group">
+          <input type="text" style="" id="username" name="username" class="required form-control" tabindex="1" accesskey="u" value="" size="35" autocomplete="off">
+          <span class="hidden-xs addon" id="basic-addon2">@georgiasouthern.edu</span>
+        </div>
+
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <div class="input-group">
+          <input type="password" style="" id="password" name="password" class="required form-control" tabindex="2" accesskey="p" value="" size="35" autocomplete="off">
+        </div>
+
+        <div class="visible-xs clearfix"></div>
+
+        <input type="hidden" name="execution" th:value="${flowExecutionKey}" />
+        <input type="hidden" name="_eventId" value="submit" />
+        <input type="hidden" name="geolocation"/>
+
+        <input type="submit" tabindex="4" value="LOGIN" accesskey="l" name="submit" class="btn btn-blue">
+      </form>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p><a href="${myGS_url}/portal/my-lookup-myid.php" target="_self">Forgot Username?</a></p>
+          <p><a href="${myGS_url}/portal/my-forgot.php" target="_self">Forgot Password?</a></p>
+          <p>First-time user? <a href="${myGS_url}/portal/my-get-start.php" target="_self">Look up your credentials</a></p>
+          <p>Parents: <a href="http://parents.georgiasouthern.edu/s/1544/gid3/index.aspx?sid=1544&amp;gid=3&amp;pgid=1461">Join/Login at the Eagle Family Network</a></p>
+        </div>
+      </div>
+    </div>
+  </div><!-- end .row-->
+
+  <div class="row">
+    <div class="col-xs-12">
+      <p>
+        <strong>Need assistance</strong>? Contact the Service Desk at <span th:utext="#{screen.georgiasouthern.servicedesk.telephone}"/> or <span th:utext="#{screen.georgiasouthern.servicedesk.email}"/>
+      </p>
+      <p style="font-size:.7em;">For your security, please log out and exit your web browser at the end of your session.</p>
+    </div>
+  </div><!-- end .row-->
+</div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+
+  <title>Central Authentication Service | Georgia Southern University</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/cas.custom.css">
+
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="js/duo/Duo-Web-v2.js"></script>
+</head>
+
+<body id="cas">
+  <div id="content" class="landing">
+    <div id="inner-wrapper" class="container">
+      <div class="row" id="header">
+        <div class="col-xs-12 col-sm-5">
+          <a href="http://www.georgiasouthern.edu/"><img id="logo" alt="Georgia Southern University home page" class="img-responsive" src="images/gs-logo-cas.png"></a>
+        </div>
+        <div class="col-sm-4 col-sm-offset-3 pull-right hidden-xs">
+          <div class="top-links">
+            <a href="https://my.georgiasouthern.edu">MyGS</a>&nbsp;&nbsp;&nbsp;<a href="http://www.georgiasouthern.edu/">University Home</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="main">
+        <div layout:fragment="mainContent" id="mainContent" class="col-xs-12">
+           <!-- Content goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div id="copyright" class="col-sm-12">
+          <p>Powered by <a href="http://www.apereo.org/cas">Apereo Central Authentication Service</a></p>
+            <p>Copyright &copy; 2017 <a href="http://www.georgiasouthern.edu/">Georgia Southern University</a><br>
+            All rights reserved . <a href="http://www.georgiasouthern.edu/privacy/">Privacy Statement</a><br>
+            A Unit of the <a href="http://usg.edu">University System of Georgia</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

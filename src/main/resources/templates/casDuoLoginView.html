@@ -1,0 +1,85 @@
+<div layout:decorate="~{customLayout}" layout:fragment="mainContent">
+  <h1>Single Sign-On Services</h1>
+  <p>Access University resources with your MyGeorgiaSouthern credentials.</p>
+
+  <form method="post" id="duo_form" class="fm-v clearfix" th:object="${credential}">
+    <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
+    <input type="hidden" name="_eventId" value="submit"/>
+
+    <div class="box fl-panel" id="login">
+      <iframe id="duo_iframe"
+              width="768"
+              height="330"
+              frameborder="0"
+              style="border-style: none;"
+              th:attr="data-host=${apiHost},data-sig-request=${sigRequest}"
+              data-post-argument="signedDuoResponse">
+      </iframe>
+    </div>
+
+    <p style="font-size:.75em;">
+      <a href="javascript:void" onclick="redirectToLoginViewAndEndTheFlow();">Not you? Sign in as another user &gt;</a>
+    </p>
+  </form>
+
+  <script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery("input#password").focus();
+  });
+
+  function redirectToLoginViewAndEndTheFlow() {
+    var loginViewUrl = window.location.href;
+    window.location.replace(loginViewUrl);
+  }
+  </script>
+
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 style="font-size:.9em;" class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Need help?</a> <span class="caret aqua"></span>
+        </h4>
+      </div>
+
+      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <p>If you are using a Yubikey (USB dongle), select "Enter a Passcode," then touch your key to continue.</p>
+          <p>Use a supported browser: Chrome, Firefox, Safari, Internet Explorer 8 or later, or Opera.</p>
+          <p>Automatic push notifications: click "My Settings &amp; Devices," complete the two-factor step, then check the box enable the setting.</p>
+          <p>Expired sessions: <a href="${myGS_url}">return to ${myGS_label}</a> and try again.</p>
+          <p>Trouble with Duo Mobile? Check their <a href="https://status.duo.com/">system status</a> page.</p>
+          <p>For further assistance, contact your technical support representative or the Service Desk at (912) 478-2287 or helpdesk@georgiasouthern.edu.</p>
+        </div>
+      </div>
+    </div><!-- end .panel 1-->
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 style="font-size:.9em;" class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">What is two-factor authentication?</a> <span class="caret aqua"></span>
+        </h4>
+      </div>
+
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          <p>Two-factor authentication adds a second layer of security to your online accounts. Verifying your identity using a second factor (like your phone or other device) prevents anyone but you from logging in, even if they know your password.</p>
+        </div>
+      </div>
+    </div><!-- end .panel 2-->
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 style="font-size:.9em;" class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Why is the University requiring me to use two-factor?</a> <span class="caret aqua"></span>
+        </h4>
+      </div>
+
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          <p>You have been identified as a staff or faculty member with access to critical student information or other University systems that are targets for phishing and social engineering scams.</p>
+          <p>Two-factor authentication helps protect our students, faculty and staff from identity theft and University systems from being hacked.</p>
+        </div>
+      </div>
+    </div><!-- end .panel 3-->
+  </div><!-- end .panel-group-->
+</div>

@@ -1,0 +1,266 @@
+body {
+  background: #041e42 url(../images/gsbg.png) no-repeat fixed center top / cover;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Cabin,Helvetica,Arial,sans-serif;
+}
+
+nav ul {
+  list-style: outside none none;
+}
+
+blockquote,q {
+  quotes: none;
+}
+
+blockquote::before,blockquote::after,q::before,q::after {
+  content: none;
+}
+
+a {
+  background: rgba(0,0,0,0) none repeat scroll 0 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #ccc -moz-use-text-color -moz-use-text-color;
+  border-image: none;
+  border-style: solid none none;
+  border-width: 1px 0 0;
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,select {
+  vertical-align: middle;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Cabin,Helvetica,Arial,sans-serif;
+}
+
+/* branding */
+#header {
+  padding: 30px 15px 0;
+}
+
+.top-links {
+  font-size: .8em;
+  text-align: right;
+}
+
+/* content area */
+#inner-wrapper.container {
+  margin-top: 5%;
+}
+
+#content.landing {
+  background-color: rgba(0,0,0,0);
+}
+
+#content.landing #main h1 {
+  font-family: Cabin,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+#content.landing #main h1 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+#content.landing #main h2 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+#content.landing #main p {
+  font-size: .9em;
+}
+
+.alert-info {
+  background-color: #e5e5e5;
+  border-color: #e5e5e5;
+  color: #041e42;
+}
+
+/* login form */
+#fm1 {
+  padding: 15px 0;
+}
+
+#fm1 .row {
+  margin-bottom: 10px;
+}
+
+#fm1 .row label {
+  color: #777;
+  display: block;
+}
+
+#fm1 .row input[type="text"],#fm1 .row input[type="password"] {
+  background: #ffd none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+#fm1 .row.check {
+  border-bottom: 1px solid #ddd;
+  color: #777;
+  font-size: 11px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#fm1 .row.check label {
+  display: inline;
+}
+
+.addon {
+  background-color: none;
+  border: 0;
+  color: #333;
+  float: left;
+  margin-left: 2px;
+}
+
+.btn-submit, .btn-blue {
+  background-color: #041e42;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-submit:hover,.btn-submit:active {
+  text-decoration: none;
+}
+
+.btn-submit:focus {
+  background-color: #00679A;
+  color: #fff;
+  text-decoration: none;
+}
+
+#username,#password {
+  width: auto;
+  margin-bottom: 15px;
+}
+
+/* duo iframe overrides */
+iframe {
+  max-width: 100%;
+}
+
+/* footer */
+#copyright {
+  color: #fff;
+  font-size: .6em;
+  margin: 5px 0 20px;
+  text-align: center;
+}
+#copyright a {
+    color:#fff;
+    text-decoration:underline;
+}
+
+/* media queries */
+@media (max-width: 767px) {
+  .container {
+    margin-top: 0;
+    width: 90%;
+    text-align: center;
+  }
+
+  #header img {
+    margin: 0 auto;
+  }
+
+  #content.landing #main {
+    padding: 5px;
+  }
+
+  #content.landing #main h1 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: .5em;
+    text-align: center;
+  }
+
+  #content.landing #main h2 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: .5em;
+  }
+
+  #content p {
+    font-size: .8em;
+  }
+
+  .input-group,.form-control {
+    display: inline-block;
+  }
+
+  #username,#password {
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 768px;
+  }
+}

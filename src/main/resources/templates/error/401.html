@@ -1,0 +1,8 @@
+<div layout:decorate="~{customLayout}" layout:fragment="mainContent">
+  <div class="alert alert-info">
+    <h2 class="prompt" th:utext="#{screen.error.page.permissiondenied}" />
+    <p th:utext="#{screen.error.page.permissiondenied}" />
+    <br/>
+    <p><a class="btn btn-info btn-lg" th:href="@{/login}" th:utext="#{screen.error.page.loginagain}" /></p>
+  </div>
+</div>

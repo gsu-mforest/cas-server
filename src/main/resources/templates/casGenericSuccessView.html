@@ -1,0 +1,10 @@
+<div layout:decorate="~{customLayout}" layout:fragment="mainContent">
+  <h1>Single Sign-On Services</h1>
+  <p>Access University resources with your MyGeorgiaSouthern credentials.</p>
+  <div class="alert alert-success">
+    <h2 th:utext="#{screen.success.header}"/>
+    <p th:utext="#{screen.success.success(${principal.id})}"/>
+    <p th:utext="#{screen.success.security}"/>
+  </div>
+  <p><strong>Need assistance</strong>? Contact the Service Desk at (912) 478-2287 or cats@georgiasouthern.edu</p>
+</div>

@@ -1,0 +1,16 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^https://my\\.gs\\.local(/.*)?",
+  "name" : "MyGS Local",
+  "id" : 1001,
+  "description" : "MyGS Local",
+  "multifactorPolicy" : {
+    "@class" : "org.apereo.cas.services.DefaultRegisteredServiceMultifactorPolicy",
+    "multifactorAuthenticationProviders" : [ "java.util.LinkedHashSet", [ "mfa-duo" ] ],
+    "principalAttributeNameTrigger" : "memberOf",
+    "principalAttributeValueToMatch" : "CN=AD CAS,OU=Duo Security,OU=Applications,OU=Enterprise,OU=gasou,DC=ad,DC=georgiasouthern,DC=edu"
+  },
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  }
+}
